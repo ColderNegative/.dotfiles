@@ -15,5 +15,7 @@ require("mason-lspconfig").setup()
 require("lspconf")
 require("cmpconf")
 
+-- treesitter
+require'nvim-treesitter.configs'.setup {}
 
 
