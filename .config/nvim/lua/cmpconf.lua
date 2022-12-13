@@ -63,7 +63,7 @@ cmp.setup({
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local servers = { 'pyright', 'clangd', 'hls', 'jdtls', 'sumneko_lua'}
+local servers = { 'jedi_language_server', 'clangd', 'hls', 'jdtls', 'sumneko_lua', 'rust_analyzer'}
 for _, lsp in ipairs(servers) do
     require('lspconfig')[lsp].setup {
         capabilities = capabilities,

@@ -47,13 +47,21 @@ return require('packer').startup(function(use)
     }
 
     -- toggle terminal
-    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-        require("toggleterm").setup()
-    end}
+    use {"akinsho/toggleterm.nvim", tag = '*'}
 
     -- treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+
+    use({
+        "Pocco81/auto-save.nvim",
+        config = function()
+             require("auto-save").setup {
+                -- your config goes here
+                -- or just leave it empty :)
+             }
+        end,
+    })
 end)

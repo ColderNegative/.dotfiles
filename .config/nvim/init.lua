@@ -18,4 +18,17 @@ require("cmpconf")
 -- treesitter
 require'nvim-treesitter.configs'.setup {}
 
+-- toggleterm
+require("toggleterm").setup{
+    open_mapping = [[tf]],
+}
 
+require'lspconfig'.arduino_language_server.setup {
+  cmd = {
+    "arduino-language-server",
+    "-cli-config", "~/.arduinoIDE/arduino-cli.yaml",
+    "-fqbn", "arduino:uvr:uno",
+    "-cli", "arduino-cli",
+    "-clangd", "clangd"
+  }
+}
