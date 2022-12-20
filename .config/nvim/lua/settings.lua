@@ -37,9 +37,9 @@ o.smartcase = true
 
 -- Undo and backup options
 o.backup = false
-o.writebackup = false
-o.undofile = true
 o.swapfile = false
+o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+o.undofile = true
 
 -- Remember 50 items in commandline history
 o.history = 50

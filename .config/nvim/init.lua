@@ -1,7 +1,7 @@
 -- fundamental configuration
 require("settings")
-require("keybindings")
 require("plugins")
+require("keybindings")
 
 -- colorscheme
 vim.cmd('colorscheme gruvbox-material')

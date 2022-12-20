@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
 
-    use {
-        'Pocco81/auto-save.nvim',
-    }
+    use { 'Pocco81/auto-save.nvim' }
+    use { 'mbbill/undotree' }
+    use { 'tpope/vim-fugitive' }
 end)
