@@ -3,7 +3,9 @@ local o = vim.o
 local opt = vim.opt
 
 
+
 o.termguicolors = true
+o.background = "dark"
 
 o.scrolloff = 8
 

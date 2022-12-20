@@ -1,53 +1,56 @@
 return require('packer').startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use { 'wbthomason/packer.nvim' }
+
+    -- color schemes
+    use { 'olivercederborg/poimandres.nvim' }
+    use { 'ellisonleao/gruvbox.nvim' }
+    use { 'sainnhe/gruvbox-material' }
 
     use {
-      'olivercederborg/poimandres.nvim',
-      config = function()
-        require('poimandres').setup {
-          -- leave this setup function empty for default config
-          -- or refer to the configuration section
-          -- for configuration options
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+
+    use {
+        'windwp/nvim-autopairs',
+        config = function() require('nvim-autopairs').setup {} end
+    }
+
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
+
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-nvim-lua'},
+
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},
+            {'rafamadriz/friendly-snippets'},
         }
-      end
     }
-
-    use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
-
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
-
-    -- lsp manager
-    use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
-
-    -- lsp completion
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
-
-    -- For vsnip users.
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
 
     -- file fuzzy finding
     use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    -- or                            , branch = '0.1.x',
-      requires = { {'nvim-lua/plenary.nvim'} }
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        -- or                            , branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
     }
 
     -- toggle terminal
-    use {"akinsho/toggleterm.nvim", tag = '*'}
+    use {
+        'akinsho/toggleterm.nvim',
+        tag = '*'
+    }
 
     -- treesitter
     use {
@@ -55,13 +58,7 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
 
-    use({
-        "Pocco81/auto-save.nvim",
-        config = function()
-             require("auto-save").setup {
-                -- your config goes here
-                -- or just leave it empty :)
-             }
-        end,
-    })
+    use {
+        'Pocco81/auto-save.nvim',
+    }
 end)
