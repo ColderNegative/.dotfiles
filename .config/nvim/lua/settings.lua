@@ -51,5 +51,4 @@ o.splitbelow = true
 opt.mouse = "a"
 
 -- Map <leader> to space
-g.mapleader = " "
-g.maplocalleader = " "
+g.mapleader = ' '

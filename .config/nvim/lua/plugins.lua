@@ -1,11 +1,11 @@
 return require('packer').startup(function(use)
     -- Packer can manage itself
-    use { 'wbthomason/packer.nvim' }
+    use {'wbthomason/packer.nvim'}
 
     -- color schemes
-    use { 'olivercederborg/poimandres.nvim' }
-    use { 'ellisonleao/gruvbox.nvim' }
-    use { 'sainnhe/gruvbox-material' }
+    use {'olivercederborg/poimandres.nvim'}
+    use {'ellisonleao/gruvbox.nvim'}
+    use {'sainnhe/gruvbox-material'}
 
     use {
         'nvim-lualine/lualine.nvim',
@@ -17,27 +17,24 @@ return require('packer').startup(function(use)
         config = function() require('nvim-autopairs').setup {} end
     }
 
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        requires = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
+    -- LSP Support
+    use {'neovim/nvim-lspconfig'}
+    use {'williamboman/mason.nvim'}
+    use {'williamboman/mason-lspconfig.nvim'}
+    -- for java Support
+    use {'mfussenegger/nvim-jdtls'}
 
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
+    -- Autocompletion
+    use {'hrsh7th/nvim-cmp'}
+    use {'hrsh7th/cmp-buffer'}
+    use {'hrsh7th/cmp-path'}
+    use {'saadparwaiz1/cmp_luasnip'}
+    use {'hrsh7th/cmp-nvim-lsp'}
+    use {'hrsh7th/cmp-nvim-lua'}
 
-            -- Snippets
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
-        }
-    }
+    -- Snippets
+    use {'L3MON4D3/LuaSnip'}
+    use {'rafamadriz/friendly-snippets'}
 
     -- file fuzzy finding
     use {

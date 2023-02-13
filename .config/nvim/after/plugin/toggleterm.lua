@@ -1,5 +1,7 @@
 require("toggleterm").setup{
     open_mapping = [[<leader>t]],
+    direction = 'float',
+    insert_mappings = false,
 }
 
 -- toggleterm keybindings
