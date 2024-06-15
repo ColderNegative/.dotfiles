@@ -99,3 +99,11 @@ require('lspconfig')["jdtls"].setup {
 require('lspconfig')["pyright"].setup {
   capabilities = capabilities,
 }
+
+require('lspconfig')["eslint"].setup {
+  capabilities = capabilities,
+}
+
+require('lspconfig')['cmake'].setup {
+  capabilities = capabilities,
+}

@@ -19,7 +19,7 @@ keymap("n", "gs", "<C-w>s", default_opts)
 keymap("n", "gv", "<C-w>v", default_opts)
 
 -- tree toggle
-keymap("n", "<leader>t", function() require("nvim-tree.api").tree.toggle() end, {})
+keymap("n", "<leader>t", require("nvim-tree.api").tree.toggle, {})
 
 -- lsp keymaps
 keymap("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
